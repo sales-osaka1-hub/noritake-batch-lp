@@ -8,193 +8,266 @@
 <meta name="description" content="バッチ混合を精密自動化。自動計量・自動投入・自動排出で、原料調合のミスを防止するバッチ混合システム。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <header class="mast">
-  <div class="in">
-    <a class="brand" href="#top" aria-label="ページ先頭へ"><img src="logo_navy.png" alt="Noritake" width="433" height="81"></a>
-    <nav class="gnav" aria-label="ページ内"><a href="#movie">動画</a><a href="#system">しくみ</a><a href="#process">工程</a><a href="#feature">特徴</a><a href="#cta">お問い合わせ</a></nav>
-    <div class="mast-tab"><span class="lbl">バッチ混合のご相談</span><button class="mast-btn js-cta" type="button">相談する →</button></div>
-  </div>
+  <a class="brand" href="#top" aria-label="ページ先頭へ"><img src="images/logo_navy.png" alt="Noritake" width="433" height="81"></a>
+  <nav class="gnav" aria-label="ページ内">
+    <a href="#movie">動画</a><a href="#system">しくみ</a><a href="#process">工程</a><a href="#mistake">ミス防止</a><a href="#cta">お問い合わせ</a>
+  </nav>
+  <a class="mast-cta" href="#cta">導入を相談する</a>
 </header>
 
-<div class="hero" id="top">
-  <div class="wrap">
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <ul class="chips" aria-label="主な機能"><li>自動計量</li><li>自動投入</li><li>自動排出</li></ul>
-        <p class="prodname">バッチ混合システム</p>
-        <h1><span class="ib">バッチ混合を、</span><span class="ib"><em>精密自動化。</em></span></h1>
-        <p class="lead">バッチ混合システムで、原料調合のミス防止。ボタン一つで、計量・投入・撹拌・排出が完了します。</p>
-        <div class="acts"><button class="b-main js-cta" type="button">バッチ混合を相談する →</button><a class="b-line" href="#process">工程を見る</a></div>
-      </div>
-      <figure class="movie" id="movie">
-        <div class="player" id="player">
-          <video id="vid" src="noritake_batch_mixing.mp4" poster="video_poster.jpg" preload="metadata" playsinline aria-label="バッチ混合システム 紹介動画"></video>
-          <button class="play" id="playbtn" type="button" aria-label="紹介動画を再生"><span class="disc"><svg viewBox="0 0 24 24" aria-hidden="true"><path id="ico" d="M7 4.5v15l12-7.5z"/></svg></span><span class="lbl">紹介動画を見る</span></button>
-          <div class="bar-p" aria-hidden="true"><i id="prog"></i></div>
-        </div>
-        <figcaption><span>紹介動画（1分54秒・音声あり）</span><span id="tm">0:00 / 1:54</span></figcaption>
-      </figure>
-    </div>
-    <dl class="figs">
-      <div><dd>ボタン一つ</dd><dt>計量・投入・撹拌・排出が完了</dt></div>
-      <div><dd>自動計算</dd><dt>製造量に応じて各配合重量を計算</dt></div>
-      <div><dd>バーコード</dd><dt>配合忘れ・原料間違いを防止</dt></div>
-    </dl>
+<main id="top">
+
+<!-- ============ 1. FIRST VIEW ============
+     Composition taken from the leaflet itself: the machine stands across a salmon band,
+     the flow sheet is printed large inside the band as a line drawing, and the three
+     "自動" stations sit on a pipe that runs on down the page. -->
+<div class="hero">
+  <div class="field" aria-hidden="true">
+    <svg class="blueprint" viewBox="0 0 900 640" preserveAspectRatio="xMidYMid slice">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M40 250 H250 V170 H420 V210" class="bp"/>
+        <path d="M40 400 H290 V140 H470 V210" class="bp"/>
+        <path d="M540 30 V210" class="bp"/>
+        <path d="M600 30 V210" class="bp"/>
+        <path d="M370 206 H670 V420 L560 520 H480 L370 420 Z" class="bp"/>
+        <path d="M520 520 V560 H820 V470 H900" class="bp"/>
+        <circle cx="140" cy="250" r="22" class="bp"/><circle cx="140" cy="400" r="22" class="bp"/><circle cx="680" cy="560" r="22" class="bp"/>
+        <path d="M40 250 H250 V170 H420 V210" class="bp-flow"/>
+        <path d="M520 520 V560 H820 V470 H900" class="bp-flow"/>
+      </g>
+    </svg>
   </div>
+
+  <div class="hero-in">
+    <div class="hero-copy">
+      <p class="prod"><span>ノリタケ株式会社 エンジニアリング事業部</span>バッチ混合システム</p>
+      <h1><span class="l1">バッチ混合を、</span><span class="l2">精密自動化。</span></h1>
+      <p class="lead">バッチ混合システムで、原料調合のミス防止。<br>ボタン一つで、計量・投入・撹拌・排出が完了します。</p>
+      <div class="acts">
+        <a class="btn" href="#cta">導入を相談する</a>
+        <a class="txt-link" href="#movie">紹介動画を見る</a>
+      </div>
+    </div>
+
+    <figure class="hero-photo">
+      <img src="images/machine.png" alt="バッチ混合システムの外観" width="670" height="726">
+    </figure>
+
+    <a class="teaser" href="#movie" id="teaser">
+      <img src="images/video_poster.jpg" alt="" width="1280" height="720">
+      <span class="t-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span>
+      <span class="t-cap">紹介動画<b>1:54</b></span>
+    </a>
+  </div>
+
+  <ol class="autos" aria-label="主な機能">
+    <li>自動計量</li><li>自動投入</li><li>自動排出</li>
+  </ol>
 </div>
 
-<section class="cream" id="system">
-  <div class="wrap">
-    <div class="sys">
-      <div class="sys-txt">
-        <h2><span class="ib">タンクの重量で、</span><span class="ib">投入量を計量する。</span></h2>
-        <p class="lead">ポンプにて原料を移送し、調合タンク重量より投入量を計量します。流量での管理も可能です。原料容器からポンプで直接吸い込むことができ、粉体にも対応します。</p>
-      </div>
-      <figure class="sys-photo">
-        <img src="machine.png" alt="バッチ混合システムの外観" width="670" height="726">
-        <figcaption>バッチ混合システム 外観</figcaption>
-      </figure>
+<!-- ============ 2. MOVIE ============ -->
+<section class="movie piped" id="movie" aria-labelledby="movie-h">
+  <div class="movie-grid">
+    <div class="movie-copy">
+      <h2 id="movie-h"><span class="ib">計量から排出まで、</span><span class="ib">2分弱の動画で。</span></h2>
+      <p class="sub">紹介動画　1分54秒・ナレーションあり<br>見たい場面を選ぶと、そこから再生します。</p>
+      <ol class="chap" aria-label="動画の見どころ">
+        <li><button type="button" data-t="0"><time>0:00</time>バッチ混合を、精密自動化</button></li>
+        <li><button type="button" data-t="11.8"><time>0:11</time>ボタン一つで、計量から排出まで</button></li>
+        <li><button type="button" data-t="23.6"><time>0:23</time>タンクの重量で投入量を計量</button></li>
+        <li><button type="button" data-t="35.2"><time>0:35</time>投入の順番・速度・やり方</button></li>
+        <li><button type="button" data-t="47.6"><time>0:47</time>自動で撹拌、一定量の排出</button></li>
+        <li><button type="button" data-t="62.5"><time>1:02</time>原料容器から直接吸い込み・粉体対応</button></li>
+        <li><button type="button" data-t="73.3"><time>1:13</time>配合重量の自動計算</button></li>
+        <li><button type="button" data-t="84.2"><time>1:24</time>バーコードチェック</button></li>
+        <li><button type="button" data-t="92.6"><time>1:32</time>計量履歴データの取り出し</button></li>
+      </ol>
     </div>
+    <div class="player" id="player">
+      <video id="vid" src="video/noritake_batch_mixing.mp4" poster="images/video_poster.jpg" preload="metadata" playsinline aria-label="バッチ混合システム 紹介動画"></video>
+      <button class="play" id="playbtn" type="button" aria-label="紹介動画を再生"><svg viewBox="0 0 24 24" aria-hidden="true"><path id="ico" d="M7 4.5v15l12-7.5z"/></svg></button>
+      <div class="bar-p" aria-hidden="true"><i id="prog"></i></div>
+    </div>
+  </div>
+</section>
 
-    <figure class="sheet" aria-label="フローシート例">
-      <figcaption><b>フローシート例</b><span>A液・B液はポンプで移送、C液と粉体も混合タンクへ。ロードセルで重量を計量し、ポンプで混合液を排出します。</span></figcaption>
+<!-- ============ 3. SYSTEM : the flow sheet as a drawing sheet with a title block ============ -->
+<section class="system piped" id="system" aria-labelledby="sys-h">
+  <div class="sys-head">
+    <h2 id="sys-h"><span class="ib">ポンプで移送し、</span><span class="ib">タンクの重量で</span><span class="ib">投入量を計量する。</span></h2>
+    <p class="lead">A液・B液はポンプで混合タンクへ。C液と粉体は上部から投入し、ロードセルで重量を計量します。</p>
+  </div>
+  <figure class="drawing">
+    <div class="drawing-in">
       <div class="sheet-scroll">
-      <svg viewBox="0 0 1100 540" role="img">
-        <title>A液とB液をポンプで、C液と粉を上部から混合タンクへ投入し、ロードセルで計量、撹拌後にポンプで混合液を排出するフローシート例</title>
+      <svg viewBox="0 0 1200 630" role="img" aria-labelledby="sheet-t">
+        <title id="sheet-t">フローシート例：A液・B液をポンプで、C液と粉を上部から混合タンクへ投入。ロードセルで計量し、撹拌後にポンプで混合液を排出</title>
         <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M60 250 H300 V170 H470 V200" stroke="#D4CBC1" stroke-width="16"/>
-          <path d="M60 420 H330 V150 H520 V200" stroke="#D4CBC1" stroke-width="16"/>
-          <path d="M600 50 V200" stroke="#D4CBC1" stroke-width="16"/>
-          <path d="M660 60 V200" stroke="#D4CBC1" stroke-width="16"/>
-          <path d="M60 250 H300 V170 H470 V200" stroke="#4082D2" stroke-width="8" stroke-dasharray="40 18" class="flow"/>
-          <path d="M60 420 H330 V150 H520 V200" stroke="#50AA6E" stroke-width="8" stroke-dasharray="40 18" class="flow"/>
-          <path d="M600 50 V200" stroke="#8C6EB4" stroke-width="8" stroke-dasharray="20 14" class="flow"/>
-          <path d="M570 470 V490 H880 V420 H1060" stroke="#D4CBC1" stroke-width="16"/>
-          <path d="M570 470 V490 H880 V420 H1060" stroke="#7896BE" stroke-width="8" stroke-dasharray="40 18" class="flow"/>
+          <path d="M80 300 H330 V200 H520 V240" class="pipe"/>
+          <path d="M80 470 H370 V170 H570 V240" class="pipe"/>
+          <path d="M640 60 V240" class="pipe"/>
+          <path d="M700 84 V240" class="pipe thin"/>
+          <path d="M620 560 V575 H930 V500 H1130" class="pipe"/>
+          <path d="M80 300 H330 V200 H520 V240" class="liq a"/>
+          <path d="M80 470 H370 V170 H570 V240" class="liq b"/>
+          <path d="M640 60 V240" class="liq c"/>
+          <path d="M620 560 V575 H930 V500 H1130" class="liq m"/>
         </g>
-        <path d="M420 190 H720 V380 L600 470 H540 L420 380 Z" fill="#fff" stroke="#1C1C1E" stroke-width="5"/>
-        <path d="M425 260 H715 V378 L598 465 H542 L425 378 Z" fill="#7896BE" opacity=".9"/>
-        <path d="M570 120 V340" stroke="#1C1C1E" stroke-width="6"/><rect x="545" y="100" width="50" height="30" fill="#3C3C40"/>
-        <path d="M500 330 H640" stroke="#1C1C1E" stroke-width="10" stroke-linecap="round"/>
-        <rect x="378" y="310" width="30" height="30" fill="#C55A11"/><rect x="732" y="310" width="30" height="30" fill="#C55A11"/>
-        <path d="M630 30 H690 L670 60 H650 Z" fill="#fff" stroke="#1C1C1E" stroke-width="3"/>
-        <g fill="#AA7846"><circle cx="658" cy="90" r="5"/><circle cx="662" cy="130" r="5"/><circle cx="656" cy="168" r="5"/></g>
-        <g fill="#fff" stroke="#1C1C1E" stroke-width="4"><circle cx="170" cy="250" r="30"/><circle cx="170" cy="420" r="30"/><circle cx="740" cy="490" r="30"/></g>
-        <g font-family="Zen Kaku Gothic New, Noto Sans JP, sans-serif" font-weight="900" font-size="26" fill="#1C1C1E" text-anchor="middle"><text x="170" y="259">P</text><text x="170" y="429">P</text><text x="740" y="499">P</text></g>
-        <g font-family="Noto Sans JP, sans-serif" font-size="24" font-weight="700" fill="#3C3C40">
-          <text x="30" y="232">A液</text><text x="30" y="402">B液</text><text x="582" y="30">C液</text><text x="700" y="30">（粉）</text>
-          <text x="770" y="333">ロードセル</text><text x="960" y="402">混合液</text>
-          <text x="570" y="420" fill="#fff" text-anchor="middle">混合タンク</text>
+        <path d="M470 236 H770 V440 L650 548 H590 L470 440 Z" class="tank"/>
+        <path d="M474 330 H766 V438 L648 544 H592 L474 438 Z" class="mix"/>
+        <path d="M620 150 V420" class="shaft"/><rect x="596" y="126" width="48" height="30" class="motor"/>
+        <path d="M555 410 H685" class="blade"/>
+        <rect x="428" y="380" width="30" height="34" class="cell"/><rect x="782" y="380" width="30" height="34" class="cell"/>
+        <path d="M672 44 H728 L712 76 H688 Z" class="hopper"/>
+        <g class="powder"><circle cx="700" cy="118" r="5"/><circle cx="702" cy="160" r="5"/><circle cx="698" cy="200" r="5"/></g>
+        <g class="pump"><circle cx="190" cy="300" r="30"/><circle cx="190" cy="470" r="30"/><circle cx="790" cy="575" r="30"/></g>
+        <g class="pl"><text x="190" y="309">P</text><text x="190" y="479">P</text><text x="790" y="584">P</text></g>
+        <g class="lbl">
+          <text x="40" y="282">A液</text><text x="40" y="452">B液</text><text x="624" y="38">C液</text><text x="740" y="66">（粉）</text>
+          <text x="620" y="480" class="w" text-anchor="middle">混合タンク</text><text x="1050" y="482">混合液</text>
+          <text x="826" y="404">ロードセル</text>
+        </g>
+        <g class="callout">
+          <path d="M190 330 V360 H120"/><text x="40" y="384">ポンプにて原料を移送</text>
+          <path d="M812 386 V318 H836"/><text x="844" y="312">調合タンク重量より投入量を計量</text><text x="844" y="340" class="s">流量での管理も可能</text>
+          <path d="M740 76 H880"/><text x="888" y="82">粉体も対応可能</text>
+          <path d="M930 575 V600 H944"/><text x="952" y="608">一定量だけの排出も可能</text>
         </g>
       </svg>
       </div>
-    </figure>
-  </div>
+      <table class="titleblock" aria-label="図面情報">
+        <tr><th>図名</th><td>フローシート例</td></tr>
+        <tr><th>装置</th><td>バッチ混合システム</td></tr>
+        <tr><th>出典</th><td>製品リーフレット</td></tr>
+      </table>
+    </div>
+    <ul class="co-list" aria-label="フローシートの注記">
+      <li>ポンプにて原料を移送</li>
+      <li>調合タンク重量より投入量を計量（流量での管理も可能）</li>
+      <li>粉体も対応可能</li>
+      <li>一定量だけの排出も可能</li>
+    </ul>
+  </figure>
 </section>
 
-<section id="process">
-  <div class="wrap">
-    <h2><span class="ib">A液投入から完了まで、</span><span class="ib">順に自動で。</span></h2>
-    <p class="lead">投入時間を短縮しつつ、配合ミスなどの人為ミスを防止します。投入の順番や速度、撹拌時間は任意に設定できます。</p>
-    <ol class="steps">
-      <li><b>A液投入</b></li><li><b>B液投入</b></li><li><b>C液投入</b></li><li><b>撹拌</b></li><li><b>排出</b></li><li class="end"><b>完了</b></li>
+<!-- ============ 4. PROCESS : the page pipe turns and runs through six stations ============ -->
+<section class="process piped" id="process" aria-labelledby="proc-h">
+  <h2 id="proc-h"><span class="ib">A液投入から完了まで、</span><span class="ib">投入の順番も速度も</span><span class="ib">任意に設定できる。</span></h2>
+  <div class="run">
+    <ol class="line">
+      <li class="st"><b>A液投入</b></li>
+      <li class="st"><b>B液投入</b></li>
+      <li class="st"><b>C液投入</b></li>
+      <li class="st"><b>撹拌</b></li>
+      <li class="st"><b>排出</b></li>
+      <li class="st end"><b>完了</b></li>
     </ol>
-    <div class="notes">
-      <div class="nt"><h3>投入</h3><ul>
-        <li>ポンプにて原料を移送し、調合タンク重量より投入量を計量（流量での管理も可能）</li>
+    <div class="line-notes">
+      <div class="ln in"><h3>投入</h3><ul>
+        <li>投入する順番や投入速度も任意設定可能</li>
         <li>手投入や一定速度での滴下など、投入の仕方も変更可能</li>
-        <li>投入する順番や投入速度も任意設定可能</li></ul></div>
-      <div class="nt"><h3>撹拌</h3><ul>
+        <li>原料容器からポンプで直接吸い込み可能</li></ul></div>
+      <div class="ln mx"><h3>撹拌</h3><ul>
         <li>原料投入完了の信号を受け、自動で撹拌スタート</li>
         <li>撹拌時間は任意に設定可能</li></ul></div>
-      <div class="nt"><h3>排出</h3><ul>
-        <li>一定量だけの排出も可能</li></ul></div>
+      <div class="ln out"><h3>排出</h3><ul><li>一定量だけの排出も可能</li></ul></div>
     </div>
   </div>
+  <p class="summary"><span class="ib">投入時間を短縮しつつ、</span><span class="ib">配合ミスなどの</span><span class="ib">人為ミスを防止。</span></p>
 </section>
 
-<section class="paper" id="feature">
-  <div class="wrap">
-    <h2>特徴</h2>
+<!-- ============ 5. MISTAKE PREVENTION ============ -->
+<section class="mistake piped" id="mistake" aria-labelledby="mis-h">
+  <div class="calc-block">
+    <div class="calc-copy">
+      <p class="kicker">人為ミスを防止</p>
+      <h2 id="mis-h"><span class="ib">配合比率を登録すれば、</span><span class="ib">各配合重量は</span><span class="ib">製造量から自動計算。</span></h2>
+      <p>配合比率を登録し、製造量に応じて各配合重量を自動計算することにより、配合量の計算ミスを防止します。</p>
+    </div>
+    <figure class="ledger">
+      <div class="ledger-in">
+        <div class="ratio">
+          <p class="cap">登録した配合比率</p>
+          <dl>
+            <div><dt>A液</dt><dd>50<small>%</small></dd></div>
+            <div><dt>B液</dt><dd>30<small>%</small></dd></div>
+            <div><dt>C液</dt><dd>20<small>%</small></dd></div>
+          </dl>
+        </div>
+        <div class="qty">
+          <p class="cap">製造量を入れると</p>
+          <div class="tabs" role="group" aria-label="製造量の例">
+            <button type="button" class="on" data-q="100">100 kg</button><button type="button" data-q="60">60 kg</button>
+          </div>
+          <dl class="res" id="res">
+            <div><dt>A液</dt><dd data-r="50">50 kg</dd></div>
+            <div><dt>B液</dt><dd data-r="30">30 kg</dd></div>
+            <div><dt>C液</dt><dd data-r="20">20 kg</dd></div>
+          </dl>
+        </div>
+      </div>
+      <figcaption>※比率・製造量は説明用の表示イメージです。</figcaption>
+    </figure>
+  </div>
 
-    <div class="feat">
-      <div class="feat-h"><span class="k">省人化</span><h3>調合工程の省人化を達成</h3></div>
-      <ul class="plain">
-        <li>ボタン一つで計量・投入・撹拌・排出が完了</li>
-        <li>原料容器からポンプで直接吸い込み可能</li>
-        <li>投入する順番や投入速度も任意設定可能</li>
-        <li>粉体も対応可能</li>
+  <div class="bar-block">
+    <div class="bar-copy">
+      <p class="kicker">バーコードを活用した製品管理</p>
+      <h3>バーコードチェックで、</h3>
+      <div class="code" aria-hidden="true"></div>
+    </div>
+    <div>
+      <ul class="prevent">
+        <li><span>配合忘れ</span></li>
+        <li><span>原料間違い</span></li>
+        <li><span>消費期限切れ原料の誤使用</span></li>
       </ul>
-    </div>
-
-    <div class="feat">
-      <div class="feat-h"><span class="k">ミス防止</span><h3>人為ミスを防止</h3></div>
-      <div>
-        <p class="body">配合比率を登録し、製造量に応じて各配合重量を自動計算することにより、配合量の計算ミスを防止します。</p>
-        <div class="calc" aria-label="配合重量の自動計算（表示イメージ）">
-          <table>
-            <thead><tr><th scope="col">原料</th><th scope="col">登録した配合比率</th><th scope="col">製造量 100kg のとき</th><th scope="col">製造量 60kg のとき</th></tr></thead>
-            <tbody>
-              <tr><th scope="row">A液</th><td class="n">50%</td><td class="n">50 kg</td><td class="n">30 kg</td></tr>
-              <tr><th scope="row">B液</th><td class="n">30%</td><td class="n">30 kg</td><td class="n">18 kg</td></tr>
-              <tr><th scope="row">C液</th><td class="n">20%</td><td class="n">20 kg</td><td class="n">12 kg</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="note">※数値は説明用の表示イメージです。</p>
-      </div>
-    </div>
-
-    <div class="feat">
-      <div class="feat-h"><span class="k">製品管理</span><h3><span class="ib">バーコードを活用した</span><span class="ib">製品管理</span></h3></div>
-      <div>
-        <ul class="plain">
-          <li>バーコードチェックで、配合忘れ・原料間違い・消費期限切れ原料の誤使用を防止</li>
-          <li>計量履歴データの取り出しが可能</li>
-        </ul>
-        <div class="calc hist" aria-label="計量履歴データの項目例">
-          <table>
-            <thead><tr><th scope="col">作成日時</th><th scope="col">原料ロットNo.</th><th scope="col">製品ロットNo.</th><th scope="col">etc.</th></tr></thead>
-            <tbody><tr><td><i></i></td><td><i></i></td><td><i></i></td><td><i></i></td></tr><tr><td><i></i></td><td><i></i></td><td><i></i></td><td><i></i></td></tr></tbody>
-          </table>
-        </div>
-        <p class="note">※取り出せる項目の例です（作成日時・原料ロットNo.・製品ロットNo. etc.）。画面は表示イメージです。</p>
+      <p class="prevent-tail">を防止します。</p>
+      <div class="hist">
+        <p>計量履歴データの取り出しが可能</p>
+        <ul><li>作成日時</li><li>原料ロットNo.</li><li>製品ロットNo.</li><li>etc.</li></ul>
       </div>
     </div>
   </div>
-</section>
 
-<section class="cta" id="cta">
-  <div class="wrap">
-    <div class="cta-grid">
-      <div>
-        <h2><span class="ib">バッチ混合の自動化は、</span><span class="ib">ノリタケに</span><span class="ib">ご相談ください。</span></h2>
-        <p class="lead">原料の種類や投入の順番、製造量など、現在の調合工程をお聞かせください。</p>
-        <div class="acts"><button class="b-main" type="button">お問い合わせ ［リンク先 要設定］</button></div>
-      </div>
-      <address class="co">
-        <img src="logo_white.png" alt="Noritake" width="433" height="81">
-        <p class="co-name">ノリタケ株式会社<br>エンジニアリング事業部 流体テクノ部<br>エレクトロニクスグループ</p>
-        <dl>
-          <div><dt>本社</dt><dd>〒451-8501 名古屋市西区則武新町三丁目1番36号</dd></div>
-          <div><dt>TEL</dt><dd class="n">052-561-9872</dd></div>
-          <div><dt>FAX</dt><dd class="n">052-561-7149</dd></div>
-          <div><dt>Web</dt><dd><a href="http://www.noritake.co.jp/egg/kakouki/index.html" rel="noopener" target="_blank">www.noritake.co.jp/egg/kakouki/</a> <small>［URL 要確認］</small></dd></div>
-        </dl>
-      </address>
-    </div>
+  <div class="save-block">
+    <p class="kicker">調合工程の省人化を達成</p>
+    <ul>
+      <li>ボタン一つで計量・投入・撹拌・排出が完了</li>
+      <li>原料容器からポンプで直接吸い込み可能</li>
+      <li>投入する順番や投入速度も任意設定可能</li>
+      <li>粉体も対応可能</li>
+    </ul>
   </div>
 </section>
 
-<footer class="foot">
-  <div class="wrap"><p>本ページは、リーフレット記載内容をもとに作成した提案用サンプルです。</p></div>
-</footer>
+<!-- ============ 6. CONTACT : the pipe ends here ("完了") ============ -->
+<section class="cta" id="cta" aria-labelledby="cta-h">
+  <div class="cta-in">
+    <div class="cta-copy">
+      <h2 id="cta-h"><span class="ib">バッチ混合の自動化は、</span><span class="ib">ノリタケに</span><span class="ib">ご相談ください。</span></h2>
+      <p class="lead">原料の種類、投入の順番、製造量など、いまの調合工程をお聞かせください。</p>
+      <a class="btn" href="#" aria-disabled="true">お問い合わせフォームへ［リンク先 要設定］</a>
+    </div>
+    <address class="co">
+      <img src="images/logo_white.png" alt="Noritake" width="433" height="81">
+      <p class="co-name">ノリタケ株式会社<br>エンジニアリング事業部　流体テクノ部<br>エレクトロニクスグループ</p>
+      <p>本社　〒451-8501 名古屋市西区則武新町三丁目1番36号</p>
+      <p class="tel"><span>TEL</span>052-561-9872　<span>FAX</span>052-561-7149</p>
+      <p class="web"><a href="http://www.noritake.co.jp/egg/kakouki/index.html" target="_blank" rel="noopener">www.noritake.co.jp/egg/kakouki/</a>［URL 要確認］</p>
+    </address>
+    <img class="cta-photo" src="images/machine.png" alt="" width="670" height="726">
+  </div>
+  <p class="foot">本ページは、リーフレット記載内容をもとに作成した提案用サンプルです。</p>
+</section>
+</main>
 
-<div class="bar" id="bar"><button class="js-cta" type="button">バッチ混合を相談する →</button></div>
-<script src="main.js"></script>
+<div class="bar" id="bar"><a href="#cta">導入を相談する</a></div>
+<script src="js/main.js"></script>
 </body>
 </html>
